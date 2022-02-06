@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react'
+import MainTab from '../MainTab'
 
 const App = () => {
-  return <div>My Extension</div>;
-};
+  const tabList: string[] = [
+    'Rendement brut',
+    'Rendement net',
+    'Rendement net-net',
+  ]
+  return <MainTab tabList={tabList} />
+}
 
-export default App;
+export default App

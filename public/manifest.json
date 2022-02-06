@@ -1,6 +1,6 @@
 {
-    "short_name": "Yield Check",
-    "name": "Calculte the rental yield of your investment",
+    "short_name": "Renta Check",
+    "name": "Renta Check",
     "version": "1.0.0",
     "manifest_version": 2,
     "permissions": [
