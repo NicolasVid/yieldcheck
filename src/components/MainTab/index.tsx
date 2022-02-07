@@ -1,6 +1,7 @@
-import React, { useState, SyntheticEvent } from 'react'
+import { useState, SyntheticEvent } from 'react'
 import { Tabs, Tab, Box } from '@mui/material'
 import TabPanel from './TabPanel'
+import Yield from '../Yield'
 
 interface MainTabProps {
   tabList: string[]
@@ -27,15 +28,13 @@ const MainTab = ({ tabList }: MainTabProps) => {
           aria-label="main tab"
         >
           {tabList.map((tab, index: number) => (
-            <Tab label={tab} {...a11yProps(index)} />
+            <Tab key={tab} label={tab} {...a11yProps(index)} sx={{ flex: 1 }} />
           ))}
         </Tabs>
       </Box>
-      {tabList.map((tab, index: number) => (
-        <TabPanel value={currentTabIndex} index={index}>
-          {tab}
-        </TabPanel>
-      ))}
+      <TabPanel value={currentTabIndex} index={0}>
+        <Yield />
+      </TabPanel>
     </>
   )
 }

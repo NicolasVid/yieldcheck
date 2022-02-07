@@ -1,12 +1,7 @@
-import React from 'react'
 import MainTab from '../MainTab'
 
 const App = () => {
-  const tabList: string[] = [
-    'Rendement brut',
-    'Rendement net',
-    'Rendement net-net',
-  ]
+  const tabList: string[] = ['Rendement', 'Cash Flow']
   return <MainTab tabList={tabList} />
 }
 
