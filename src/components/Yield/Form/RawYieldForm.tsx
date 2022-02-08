@@ -3,7 +3,7 @@ import AccordionWrapper from './Accordion'
 import BaseInput from './BaseInput'
 
 const RawYieldForm = () => (
-  <AccordionWrapper title="Rendement brut">
+  <AccordionWrapper title="Rendement brut" defaultExpanded>
     <FormControl sx={{ width: '100%' }}>
       <BaseInput type="buyPrice" label="Prix du bien" required />
       <BaseInput type="notaryFees" label="Frais de notaire" />

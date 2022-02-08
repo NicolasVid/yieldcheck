@@ -10,10 +10,15 @@ import { ReactNode } from 'react'
 interface AccordionWrapperProps {
   children: ReactNode
   title: string
+  defaultExpanded?: boolean
 }
 
-const AccordionWrapper = ({ children, title }: AccordionWrapperProps) => (
-  <Accordion sx={{ marginBottom: '1rem' }}>
+const AccordionWrapper = ({
+  children,
+  title,
+  defaultExpanded,
+}: AccordionWrapperProps) => (
+  <Accordion sx={{ marginBottom: '1rem' }} defaultExpanded={defaultExpanded}>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel1a-content"

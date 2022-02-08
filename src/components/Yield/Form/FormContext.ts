@@ -8,6 +8,9 @@ export const initialFormValues = {
   works: 0,
   furnishing: 0,
   rent: 0,
+  charges: 0,
+  propertyTax: 0,
+  taxRate: 0,
 }
 
 const FormContext = createContext({

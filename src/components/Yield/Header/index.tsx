@@ -1,6 +1,10 @@
 import { Box } from '@mui/material'
 import { FormValues } from '..'
-import { calculateYieldFromValues } from '../../helpers/calculateYieldFromValues'
+import {
+  calculateNetTaxYieldFromValues,
+  calculateNetYieldFromValues,
+  calculateRawYieldFromValues,
+} from '../../helpers/yields'
 import YieldItem from './YieldItem'
 
 interface YieldHeaderProps {
@@ -8,7 +12,9 @@ interface YieldHeaderProps {
 }
 
 const YieldHeader = ({ formValues }: YieldHeaderProps) => {
-  const rawYield = calculateYieldFromValues(formValues)
+  const rawYield = calculateRawYieldFromValues(formValues)
+  const netYield = calculateNetYieldFromValues(formValues)
+  const netTaxYield = calculateNetTaxYieldFromValues(formValues)
   return (
     <Box
       sx={{
@@ -18,8 +24,8 @@ const YieldHeader = ({ formValues }: YieldHeaderProps) => {
       }}
     >
       <YieldItem calculatedYield={rawYield} description="brut" />
-      <YieldItem calculatedYield={5} description="net" />
-      <YieldItem calculatedYield={4.3} description="net-net" />
+      <YieldItem calculatedYield={netYield} description="net" />
+      <YieldItem calculatedYield={netTaxYield} description="net-net" />
     </Box>
   )
 }

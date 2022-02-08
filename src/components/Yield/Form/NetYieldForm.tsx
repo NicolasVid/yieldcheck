@@ -2,15 +2,13 @@ import { Box, FormControl } from '@mui/material'
 import AccordionWrapper from './Accordion'
 import BaseInput from './BaseInput'
 
-const RawYieldForm = () => (
-  <Box>
-    <AccordionWrapper title="Rendement net">
-      <FormControl sx={{ width: '100%' }}>
-        <BaseInput type="charges" label="Charges annuelles non récupérables" />
-        <BaseInput type="propertyTax" label="Taxe foncière" />
-      </FormControl>
-    </AccordionWrapper>
-  </Box>
+const NetYieldForm = () => (
+  <AccordionWrapper title="Rendement net">
+    <FormControl sx={{ width: '100%' }}>
+      <BaseInput type="charges" label="Charges annuelles non récupérables" />
+      <BaseInput type="propertyTax" label="Taxe foncière" />
+    </FormControl>
+  </AccordionWrapper>
 )
 
-export default RawYieldForm
+export default NetYieldForm

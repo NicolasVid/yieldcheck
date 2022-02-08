@@ -4,6 +4,7 @@ import RawYieldForm from './Form/RawYieldForm'
 import NetYieldForm from './Form/NetYieldForm'
 import FormContext, { initialFormValues } from './Form/FormContext'
 import YieldHeader from './Header'
+import NetTaxYieldForm from './Form/NetTaxYieldForm'
 
 export interface FormValues {
   buyPrice: number
@@ -12,6 +13,9 @@ export interface FormValues {
   works: number
   furnishing: number
   rent: number
+  charges: number
+  propertyTax: number
+  taxRate: number
 }
 
 const Yield = () => {
@@ -29,6 +33,7 @@ const Yield = () => {
         <YieldHeader formValues={formValues} />
         <RawYieldForm />
         <NetYieldForm />
+        <NetTaxYieldForm />
       </Box>
     </FormContext.Provider>
   )
