@@ -1,14 +1,14 @@
 import { Typography, Box } from '@mui/material'
 
 interface YieldDisplayProps {
-  calculatedYield: string
+  calculatedYield: number
   description: string
 }
 
 const YieldItem = ({ calculatedYield, description }: YieldDisplayProps) => {
   let color = 'success.main'
-  if (parseInt(calculatedYield) < 8) color = 'warning.main'
-  if (parseInt(calculatedYield) < 5) color = 'error.main'
+  if (calculatedYield < 8) color = 'warning.main'
+  if (calculatedYield < 5) color = 'error.main'
   return (
     <Box>
       <Typography

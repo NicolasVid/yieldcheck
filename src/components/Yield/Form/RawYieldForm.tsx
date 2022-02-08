@@ -1,4 +1,4 @@
-import { Box, FormControl } from '@mui/material'
+import { FormControl } from '@mui/material'
 import AccordionWrapper from './Accordion'
 import BaseInput from './BaseInput'
 

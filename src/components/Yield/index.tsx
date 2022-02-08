@@ -1,10 +1,8 @@
 import { Box } from '@mui/material'
 import { useState } from 'react'
-import RawYieldForm from './Form/RawYieldForm'
-import NetYieldForm from './Form/NetYieldForm'
+import YieldForm from './Form'
 import FormContext, { initialFormValues } from './Form/FormContext'
 import YieldHeader from './Header'
-import NetTaxYieldForm from './Form/NetTaxYieldForm'
 
 export interface FormValues {
   buyPrice: number
@@ -31,9 +29,7 @@ const Yield = () => {
         }}
       >
         <YieldHeader formValues={formValues} />
-        <RawYieldForm />
-        <NetYieldForm />
-        <NetTaxYieldForm />
+        <YieldForm />
       </Box>
     </FormContext.Provider>
   )
