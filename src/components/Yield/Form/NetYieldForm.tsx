@@ -1,6 +1,6 @@
-import { Box, FormControl } from '@mui/material'
-import AccordionWrapper from './Accordion'
-import BaseInput from './BaseInput'
+import { FormControl } from '@mui/material'
+import AccordionWrapper from '../../Presentationals/Accordion'
+import BaseInput from '../../Presentationals/BaseInput'
 
 const NetYieldForm = () => (
   <AccordionWrapper title="Rendement net">

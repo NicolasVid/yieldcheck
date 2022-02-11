@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import { FormValues } from '..'
+import { FormValues } from '../../helpers/FormContext'
 import {
   calculateNetTaxYieldFromValues,
   calculateNetYieldFromValues,

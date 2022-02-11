@@ -1,8 +1,8 @@
-import { FormValues } from '../Yield'
+import { FormValues } from './FormContext'
 
 export const calculateRawYieldFromValues = (formValues: FormValues) => {
-  const { buyPrice, contribution, works, furnishing, rent } = formValues
-  const totalCost = buyPrice + contribution + works + furnishing
+  const { buyPrice, notaryFees, works, furnishing, rent } = formValues
+  const totalCost = buyPrice + notaryFees + works + furnishing
   const finalYield = (rent * 12 * 100) / totalCost
   return parseFloat(finalYield.toFixed(2))
 }
@@ -10,23 +10,23 @@ export const calculateRawYieldFromValues = (formValues: FormValues) => {
 export const calculateNetYieldFromValues = (formValues: FormValues) => {
   const {
     buyPrice,
-    contribution,
+    notaryFees,
     works,
     furnishing,
     rent,
     charges,
     propertyTax,
   } = formValues
-  const totalCost =
-    buyPrice + contribution + works + furnishing + charges + propertyTax
-  const finalYield = (rent * 12 * 100) / totalCost
+  const totalCost = buyPrice + notaryFees + works + furnishing
+  const annualRent = rent * 12
+  const finalYield = ((annualRent - charges - propertyTax) * 100) / totalCost
   return parseFloat(finalYield.toFixed(2))
 }
 
 export const calculateNetTaxYieldFromValues = (formValues: FormValues) => {
   const {
     buyPrice,
-    contribution,
+    notaryFees,
     works,
     furnishing,
     rent,
@@ -34,10 +34,10 @@ export const calculateNetTaxYieldFromValues = (formValues: FormValues) => {
     propertyTax,
     taxRate,
   } = formValues
-  const taxs = rent * 12 * 100 * 0.5 * (taxRate / 100)
-  const totalCost =
-    buyPrice + contribution + works + furnishing + charges + propertyTax
-  const annualRent = rent * 12 * 100
-  const finalYield = (annualRent - taxs) / totalCost
+  const taxs = rent * 12 * 0.5 * ((taxRate + 17.2) / 100)
+  const totalCost = buyPrice + notaryFees + works + furnishing
+  const annualRent = rent * 12
+  const finalYield =
+    ((annualRent - taxs - charges - propertyTax) * 100) / totalCost
   return parseFloat(finalYield.toFixed(2))
 }
