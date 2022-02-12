@@ -49,7 +49,9 @@ export const initialFormValues = {
 
 const FormContext = createContext({
   formValues: initialFormValues,
-  setFormValues: (prevState: FormValues) => {},
+  setFormValues: (
+    _args: FormValues | ((_args: FormValues) => FormValues)
+  ) => {},
 })
 
 export default FormContext

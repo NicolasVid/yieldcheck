@@ -1,5 +1,5 @@
 import { StandardTextFieldProps, TextField } from '@mui/material'
-import { useContext } from 'react'
+import { ChangeEvent, useContext } from 'react'
 import FormContext, { FormTypes, FormValues } from '../helpers/FormContext'
 
 interface BaseInputProps extends StandardTextFieldProps {
@@ -14,12 +14,12 @@ const BaseInput = ({
   disabled,
 }: BaseInputProps) => {
   const { formValues, setFormValues } = useContext(FormContext)
-  const handleChange = (event: any, _type: string) => {
-    const newValue = event.target.value || 0
-    setFormValues(((prevState: FormValues) => ({
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, _type: FormTypes) => {
+    const newValue = event.target.value || '0'
+    setFormValues((prevState: FormValues) => ({
       ...prevState,
       [_type]: parseInt(newValue, 10),
-    })) as any)
+    }))
   }
 
   const defaultValue = formValues[type] !== 0 && formValues[type]

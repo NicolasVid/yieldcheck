@@ -13,7 +13,7 @@ const Header = () => {
       sx={{
         display: 'flex',
         justifyContent: 'space-between',
-        padding: '0 1rem .25rem 1rem',
+        padding: '0 4.5rem .25rem 4.5rem',
       }}
     >
       <HeaderItem amount={monthlyPayment} title="Mensualités" />

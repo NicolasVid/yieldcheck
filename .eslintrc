@@ -35,7 +35,8 @@
     "react/no-unescaped-entities": "off",
     "react/jsx-props-no-spreading": "off",
     "react/state-in-constructor": "off",
-    "@typescript-eslint/no-unused-vars": 1
+    "@typescript-eslint/no-unused-vars": [1, { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/comma-dangle": 0
   },
   "settings": {
     "import/resolver": {
