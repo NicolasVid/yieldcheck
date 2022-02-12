@@ -40,7 +40,7 @@ export const initialFormValues = {
   rent: 0,
   charges: 0,
   propertyTax: 0,
-  taxRate: 0,
+  taxRate: 30,
   loanAmount: 0,
   loanTime: 20,
   interestRate: 1.16,

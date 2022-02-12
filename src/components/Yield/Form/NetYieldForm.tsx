@@ -3,7 +3,7 @@ import AccordionWrapper from '../../Presentationals/Accordion'
 import BaseInput from '../../Presentationals/BaseInput'
 
 const NetYieldForm = () => (
-  <AccordionWrapper title="Rendement net">
+  <AccordionWrapper title="Données rendement net">
     <FormControl sx={{ width: '100%' }}>
       <BaseInput type="charges" label="Charges annuelles non récupérables" />
       <BaseInput type="propertyTax" label="Taxe foncière" />

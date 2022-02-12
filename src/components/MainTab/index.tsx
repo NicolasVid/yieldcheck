@@ -16,7 +16,7 @@ const MainTab = ({ tabList }: MainTabProps) => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0)
   const [formValues, setFormValues] = useState<FormValues>(initialFormValues)
 
-  const handleTabChange = (event: SyntheticEvent, newValue: number) => {
+  const handleTabChange = (_event: SyntheticEvent, newValue: number) => {
     setCurrentTabIndex(newValue)
   }
 
@@ -24,6 +24,8 @@ const MainTab = ({ tabList }: MainTabProps) => {
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
   })
+
+  const isCashFlowDisabled = !formValues.buyPrice || !formValues.rent
 
   return (
     <>
@@ -40,6 +42,7 @@ const MainTab = ({ tabList }: MainTabProps) => {
                 label={tab}
                 {...a11yProps(index)}
                 sx={{ flex: 1 }}
+                disabled={index === 1 && isCashFlowDisabled}
               />
             ))}
           </Tabs>
@@ -47,7 +50,7 @@ const MainTab = ({ tabList }: MainTabProps) => {
         <TabPanel value={currentTabIndex} index={0}>
           <Yield />
         </TabPanel>
-        <TabPanel value={currentTabIndex} index={1} >
+        <TabPanel value={currentTabIndex} index={1}>
           <CashFow />
         </TabPanel>
       </FormContext.Provider>
