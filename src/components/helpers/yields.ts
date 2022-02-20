@@ -2,6 +2,9 @@ import { FormValues } from './FormContext'
 
 export const calculateRawYieldFromValues = (formValues: FormValues) => {
   const { buyPrice, notaryFees, works, furnishing, rent } = formValues
+  if (!buyPrice || !rent) {
+    return
+  }
   const totalCost = buyPrice + notaryFees + works + furnishing
   const finalYield = (rent * 12 * 100) / totalCost
   return parseFloat(finalYield.toFixed(2))

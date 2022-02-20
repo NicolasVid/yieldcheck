@@ -7,7 +7,7 @@ interface BaseInputProps extends StandardTextFieldProps {
 }
 
 const BaseInput = ({ type, ...rest }: BaseInputProps) => {
-  const { setFormValues } = useContext(FormContext)
+  const { formValues, setFormValues } = useContext(FormContext)
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     _type: FormTypes
@@ -18,6 +18,14 @@ const BaseInput = ({ type, ...rest }: BaseInputProps) => {
       [_type]: parseInt(newValue, 10),
     }))
   }
+  const getNonNullDefaultValues = () => {
+    if (formValues[type] === 0) {
+      return
+    }
+    return formValues[type]
+  }
+
+  const defaultValue = getNonNullDefaultValues()
 
   return (
     <TextField
@@ -26,6 +34,7 @@ const BaseInput = ({ type, ...rest }: BaseInputProps) => {
       type="number"
       InputProps={{ inputProps: { min: 0 } }}
       sx={{ width: '100%', marginBottom: '1rem' }}
+      defaultValue={defaultValue}
       {...rest}
     />
   )

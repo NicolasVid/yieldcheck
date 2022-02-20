@@ -25,8 +25,6 @@ const MainTab = ({ tabList }: MainTabProps) => {
     'aria-controls': `simple-tabpanel-${index}`,
   })
 
-  const isCashFlowDisabled = !formValues.buyPrice || !formValues.rent
-
   return (
     <>
       <FormContext.Provider value={{ formValues, setFormValues }}>
@@ -42,7 +40,6 @@ const MainTab = ({ tabList }: MainTabProps) => {
                 label={tab}
                 {...a11yProps(index)}
                 sx={{ flex: 1 }}
-                disabled={index === 1 && isCashFlowDisabled}
               />
             ))}
           </Tabs>
