@@ -13,3 +13,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img[alt=yield_view_example] { width: 20px; }
