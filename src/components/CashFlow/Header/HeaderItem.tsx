@@ -7,6 +7,8 @@ interface HeaderItemProps {
 
 const HeaderItem = ({ amount, title }: HeaderItemProps) => {
   let color = 'success.main'
+  if (amount < 0) color = 'warning.main'
+  if (amount < -50) color = 'error.main'
   return (
     <Box>
       <Typography
