@@ -15,7 +15,7 @@ const BaseInput = ({ type, ...rest }: BaseInputProps) => {
     const newValue = event.target.value || '0'
     setFormValues((prevState: FormValues) => ({
       ...prevState,
-      [_type]: parseInt(newValue, 10),
+      [_type]: parseFloat(newValue),
     }))
   }
   const getNonNullDefaultValues = () => {

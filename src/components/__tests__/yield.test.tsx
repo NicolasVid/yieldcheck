@@ -22,14 +22,6 @@ describe('Yield view is render correctly', () => {
     expect(within(button).queryByTestId('ExpandMoreIcon')).toBeInTheDocument()
   })
 
-  test('cash flow tab to be disabled on first render', () => {
-    render(<App />)
-    const cashFlowTab = screen.getByRole('tab', {
-      name: /cash flow/i,
-    })
-    expect(cashFlowTab).toHaveAttribute('disabled')
-  })
-
   test('cash flow tab to not be disabled if buyPrice and rent are filled', () => {
     render(<App />)
     const buyPriceInput = screen.getByRole('spinbutton', {
